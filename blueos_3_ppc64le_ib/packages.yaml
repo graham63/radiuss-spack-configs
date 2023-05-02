@@ -23,11 +23,13 @@ packages:
     - spec: cmake@3.23.1
       prefix: /usr/tce/packages/cmake/cmake-3.23.1
   cuda:
-    version: [12.0.0, 11.7.0, 11.5.0, 11.2.0, 11.1.0, 11.0.2, 10.2.89, 10.1.243, 10.1.168, 9.2.148, 8.0]
+    version: [12.0.0, 11.8.0, 11.7.0, 11.5.0, 11.2.0, 11.1.0, 11.0.2, 10.2.89, 10.1.243, 10.1.168, 9.2.148, 8.0]
     buildable: false
     externals:
     - spec: cuda@12.0.0+allow-unsupported-compilers
       prefix: /usr/tce/packages/cuda/cuda-12.0.0
+    - spec: cuda@11.8.0+allow-unsupported-compilers
+      prefix: /usr/tce/packages/cuda/cuda-11.8.0
     - spec: cuda@11.7.0+allow-unsupported-compilers
       prefix: /usr/tce/packages/cuda/cuda-11.7.0
     - spec: cuda@11.5.0+allow-unsupported-compilers
@@ -69,11 +71,70 @@ packages:
       prefix: /usr/tce/packages/spectrum-mpi/spectrum-mpi-rolling-release-xl-2020.03.18
     - spec: spectrum-mpi@10.3.1.03rtm0%xl@16.1.1.10
       prefix: /usr/tce/packages/spectrum-mpi/spectrum-mpi-rolling-release-xl-2021.09.22
+    - spec: spectrum-mpi@10.3.1.03rtm0%xl@16.1
+      prefix: /usr/tce/packages/spectrum-mpi/spectrum-mpi-rolling-release-xl-2022.08.19
     - spec: spectrum-mpi@10.3.1.03rtm0%xl@beta2019.06.20
       prefix: /usr/tce/packages/spectrum-mpi/spectrum-mpi-rolling-release-xl-beta-2019.06.20
+    - spec: spectrum-mpi@10.3.1.03rtm0%clang@13.0.1
+      prefix: /usr/tce/packages/spectrum-mpi/spectrum-mpi-rolling-release-clang-13.0.1-gcc-8.3.1
   python:
     buildable: false
     version: [3.8.2]
     externals:
     - spec: python@3.8.2
       prefix: /usr/tce/packages/python/python-3.8.2
+  pkg-config:
+    buildable: false
+    version: [0.27.1]
+    externals:
+    - spec: pkg-config@0.27.1
+      prefix: /usr/bin
+  rdma-core:
+    buildable: false
+    externals:
+    - spec: rdma-core@unknown_ver
+      prefix: /usr
+  m4:
+    buildable: false
+    version: [1.4.16]
+    externals:
+    - spec: m4@1.4.16
+      prefix: /usr
+  libtool:
+    buildable: false
+    version: [2.4.6]
+    externals:
+    - spec: libtool@2.4.6
+      prefix: /usr
+  hwloc:
+    buildable: false
+    version: [1.11.8]
+    externals:
+    - spec: hwloc@1.11.8
+      prefix: /usr
+  diffutils:
+    buildable: false
+    version: [3.3]
+    externals:
+    - spec: diffutils@3.3
+      prefix: /usr
+  gmake:
+    buildable: false
+    version: [2.82, 4.2.1]
+    externals:
+    - spec: gmake@3.82
+      prefix: /usr
+    - spec: gmake@4.2.1
+      prefix: /usr/tcetmp
+  ncurses:
+    buildable: false
+    version: [5.9.20130511]
+    externals:
+    - spec: ncurses@5.9.20130511+termlib abi=5
+      prefix: /usr
+  xz:
+    buildable: false
+    version: [5.2.2]
+    externals:
+    - spec: xz@5.2.2
+      prefix: /usr

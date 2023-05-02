@@ -25,7 +25,7 @@ packages::
     - spec: cuda@10.1.168
       prefix: /usr/tce/packages/cuda/cuda-10.1.168
   hip:
-    version: [5.0.2, 5.1.1, 5.2.3, 5.4.1]
+    version: [5.0.2, 5.1.1, 5.2.3, 5.4.1, 5.4.2, 5.4.3]
     buildable: false
     externals:
     - spec: hip@5.0.2
@@ -36,8 +36,12 @@ packages::
       prefix: /opt/rocm-5.2.3/hip
     - spec: hip@5.4.1
       prefix: /opt/rocm-5.4.1/hip
+    - spec: hip@5.4.2
+      prefix: /opt/rocm-5.4.2/hip
+    - spec: hip@5.4.3
+      prefix: /opt/rocm-5.4.3/hip
   llvm-amdgpu:
-    version: [5.0.2, 5.1.1, 5.2.3, 5.4.1]
+    version: [5.0.2, 5.1.1, 5.2.3, 5.4.1, 5.4.2, 5.4.3]
     buildable: false
     externals:
     - spec: llvm-amdgpu@5.0.2
@@ -48,8 +52,12 @@ packages::
       prefix: /opt/rocm-5.2.3/llvm
     - spec: llvm-amdgpu@5.4.1
       prefix: /opt/rocm-5.4.1/llvm
+    - spec: llvm-amdgpu@5.4.2
+      prefix: /opt/rocm-5.4.2/llvm
+    - spec: llvm-amdgpu@5.4.3
+      prefix: /opt/rocm-5.4.3/llvm
   hsa-rocr-dev:
-    version: [5.0.2, 5.1.1, 5.2.3, 5.4.1]
+    version: [5.0.2, 5.1.1, 5.2.3, 5.4.1, 5.4.2, 5.4.3]
     buildable: false
     externals:
     - spec: hsa-rocr-dev@5.0.2
@@ -60,8 +68,12 @@ packages::
       prefix: /opt/rocm-5.2.3/
     - spec: hsa-rocr-dev@5.4.1
       prefix: /opt/rocm-5.4.1/
+    - spec: hsa-rocr-dev@5.4.2
+      prefix: /opt/rocm-5.4.2/
+    - spec: hsa-rocr-dev@5.4.3
+      prefix: /opt/rocm-5.4.3/
   rocminfo:
-    version: [5.0.2, 5.1.1, 5.2.3, 5.4.1]
+    version: [5.0.2, 5.1.1, 5.2.3, 5.4.1, 5.4.2, 5.4.3]
     buildable: false
     externals:
     - spec: rocminfo@5.0.2
@@ -72,8 +84,12 @@ packages::
       prefix: /opt/rocm-5.2.3/
     - spec: rocminfo@5.4.1
       prefix: /opt/rocm-5.4.1/
+    - spec: rocminfo@5.4.2
+      prefix: /opt/rocm-5.4.2/
+    - spec: rocminfo@5.4.3
+      prefix: /opt/rocm-5.4.3/
   rocm-device-libs:
-    version: [5.0.2, 5.1.1, 5.2.3, 5.4.1]
+    version: [5.0.2, 5.1.1, 5.2.3, 5.4.1, 5.4.2, 5.4.3]
     buildable: false
     externals:
     - spec: rocm-device-libs@5.0.2
@@ -84,8 +100,12 @@ packages::
       prefix: /opt/rocm-5.2.3/
     - spec: rocm-device-libs@5.4.1
       prefix: /opt/rocm-5.4.1/
+    - spec: rocm-device-libs@5.4.2
+      prefix: /opt/rocm-5.4.2/
+    - spec: rocm-device-libs@5.4.3
+      prefix: /opt/rocm-5.4.3/
   rocprim:
-    version: [5.1.1, 5.2.3, 5.4.1]
+    version: [5.1.1, 5.2.3, 5.4.1, 5.4.2, 5.4.3]
     buildable: false
     externals:
     - spec: rocprim@5.1.1
@@ -94,6 +114,52 @@ packages::
       prefix: /opt/rocm-5.2.3/
     - spec: rocprim@5.4.1
       prefix: /opt/rocm-5.4.1/
+    - spec: rocprim@5.4.2
+      prefix: /opt/rocm-5.4.2/
+    - spec: rocprim@5.4.3
+      prefix: /opt/rocm-5.4.3/
+  roctracer-dev:
+    version: [5.1.1, 5.2.3, 5.4.1, 5.4.2, 5.4.3]
+    buildable: false
+    externals:
+    - spec: roctracer-dev@5.1.1
+      prefix: /opt/rocm-5.1.1/
+    - spec: roctracer-dev@5.2.3
+      prefix: /opt/rocm-5.2.3/
+    - spec: roctracer-dev@5.4.1
+      prefix: /opt/rocm-5.4.1/
+    - spec: roctracer-dev@5.4.2
+      prefix: /opt/rocm-5.4.2/
+    - spec: roctracer-dev@5.4.3
+      prefix: /opt/rocm-5.4.3/
+  hipcub:
+    version: [5.1.1, 5.2.3, 5.4.1, 5.4.2, 5.4.3]
+    buildable: false
+    externals:
+    - spec: hipcub@5.1.1
+      prefix: /opt/rocm-5.1.1/
+    - spec: hipcub@5.2.3
+      prefix: /opt/rocm-5.2.3/
+    - spec: hipcub@5.4.1
+      prefix: /opt/rocm-5.4.1/
+    - spec: hipcub@5.4.2
+      prefix: /opt/rocm-5.4.2/
+    - spec: hipcub@5.4.3
+      prefix: /opt/rocm-5.4.3/
+  rccl:
+    version: [5.1.1, 5.2.3, 5.4.1, 5.4.2, 5.4.3]
+    buildable: false
+    externals:
+    - spec: rccl@5.1.1
+      prefix: /opt/rocm-5.1.1/
+    - spec: rccl@5.2.3
+      prefix: /opt/rocm-5.2.3/
+    - spec: rccl@5.4.1
+      prefix: /opt/rocm-5.4.1/
+    - spec: rccl@5.4.2
+      prefix: /opt/rocm-5.4.2/
+    - spec: rccl@5.4.3
+      prefix: /opt/rocm-5.4.3/
   mvapich2:
     buildable: false
     externals:
@@ -102,7 +168,41 @@ packages::
       prefix: /usr/tce/packages/mvapich2/mvapich2-2.3.6-gcc-10.3.1
   python:
     buildable: false
-    version: [3.10.8]
+    version: [3.7.2, 3.8.2, 3.10.8]
     externals:
+    - spec: python@3.7.2
+      prefix: /usr/tce/packages/python/python-3.7.2
+    - spec: python@3.8.2
+      prefix: /usr/tce/packages/python/python-3.8.2
     - spec: python@3.10.8
       prefix: /usr/tce/packages/python/python-3.10.8
+  hwloc:
+    version: [2.8.0]
+    buildable: false
+    externals:
+    - spec: hwloc@2.8.0
+      prefix: /usr
+  gcov:
+    version: [10.3.1]
+    buildable: false
+    externals:
+    - spec: gcov@10.3.1
+      prefix: /opt/rh/gcc-toolset-10/root/usr/bin
+  clang:
+    version: [14.0.6]
+    buildable: false
+    externals:
+    - spec: clang@14.0.6
+      prefix: /usr
+  pkg-config:
+    buildable: false
+    version: [0.27.1]
+    externals:
+    - spec: pkg-config@0.27.1
+      prefix: /usr/bin
+  gmake:
+    buildable: false
+    version: [4.2.1]
+    externals:
+    - spec: gmake@4.2.1
+      prefix: /usr
