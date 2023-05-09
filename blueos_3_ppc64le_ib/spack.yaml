@@ -1,0 +1,178 @@
+# blueos_3_ppc64le_ib
+spack:
+  specs:
+    - matrix:
+      - [spectrum-mpi]
+      - ['%clang@13.0.1.default.gcc.8.3.1', '%clang@14.0.5.gcc.8.3.1',
+         '%clang@15.0.6.gcc.8.3.1']
+    - cmake
+  concretizer:
+    unify: when_possible
+  packages:
+    all:
+      # This defaults us to machine specific flags of ivybridge which allows
+      # us to run on broadwell as well
+      target: [ppc64le]
+      compiler: [gcc, pgi, clang, xl]
+    cmake:
+      version: [3.23.1]
+      buildable: false
+      externals:
+      - spec: cmake@3.23.1
+        prefix: /usr/tce/packages/cmake/cmake-3.23.1
+    spectrum-mpi:
+      buildable: false
+      externals:
+      - spec: spectrum-mpi@10.3.1.03rtm0%clang@13.0.1.default.gcc.8.3.1
+        prefix: /usr/tce/packages/spectrum-mpi/spectrum-mpi-rolling-release-clang-13.0.1-gcc-8.3.1
+      - spec: spectrum-mpi@10.3.1.03rtm0%clang@14.0.5.gcc.8.3.1
+        prefix: /usr/tce/packages/spectrum-mpi/spectrum-mpi-rolling-release-clang-14.0.5
+      - spec: spectrum-mpi@10.3.1.03rtm0%clang@15.0.6.gcc.8.3.1
+        prefix: /usr/tce/packages/spectrum-mpi/spectrum-mpi-rolling-release-clang-15.0.6
+      - spec: spectrum-mpi@10.3.1.03rtm0%xl@16.1
+        prefix: /usr/tcetmp
+    cuda:
+      version: [12.0.0, 11.8.0, 11.7.0, 11.5.0, 11.2.0, 11.1.0, 11.0.2, 10.2.89, 10.1.243, 10.1.168, 9.2.148, 8.0]
+      buildable: false
+      externals:
+      - spec: cuda@12.0.0+allow-unsupported-compilers
+        prefix: /usr/tce/packages/cuda/cuda-12.0.0
+      - spec: cuda@11.8.0+allow-unsupported-compilers
+        prefix: /usr/tce/packages/cuda/cuda-11.8.0
+      - spec: cuda@11.7.0+allow-unsupported-compilers
+        prefix: /usr/tce/packages/cuda/cuda-11.7.0
+      - spec: cuda@11.5.0+allow-unsupported-compilers
+        prefix: /usr/tce/packages/cuda/cuda-11.5.0
+      - spec: cuda@11.2.0+allow-unsupported-compilers
+        prefix: /usr/tce/packages/cuda/cuda-11.2.0
+      - spec: cuda@11.1.0+allow-unsupported-compilers
+        prefix: /usr/tce/packages/cuda/cuda-11.1.0
+      - spec: cuda@11.0.2+allow-unsupported-compilers
+        prefix: /usr/tce/packages/cuda/cuda-11.0.2
+      - spec: cuda@10.2.89+allow-unsupported-compilers
+        prefix: /usr/tce/packages/cuda/cuda-10.2.89
+      - spec: cuda@10.1.243+allow-unsupported-compilers
+        prefix: /usr/tce/packages/cuda/cuda-10.1.243
+      - spec: cuda@10.1.168+allow-unsupported-compilers
+        prefix: /usr/tce/packages/cuda/cuda-10.1.168
+      - spec: cuda@9.2.148+allow-unsupported-compilers
+        prefix: /usr/tce/packages/cuda/cuda-9.2.148
+      - spec: cuda@8.0+allow-unsupported-compilers
+        prefix: /usr/tce/packages/cuda/cuda-8.0
+    python:
+      buildable: false
+      version: [3.8.2]
+      externals:
+      - spec: python@3.8.2
+        prefix: /usr/tce/packages/python/python-3.8.2
+    pkg-config:
+      buildable: false
+      externals:
+      - spec: pkg-config@0.27.1
+        prefix: /usr/bin
+    hwloc:
+      buildable: false
+      externals:
+      - spec: hwloc@1.11.8
+        prefix: /usr
+    rdma-core:
+      buildable: false
+      externals:
+      - spec: rdma-core@unknown_ver
+        prefix: /usr
+    m4:
+      buildable: false
+      version: [1.4.16]
+      externals:
+      - spec: m4@1.4.16
+        prefix: /usr
+    libtool:
+      buildable: false
+      version: [2.4.6]
+      externals:
+      - spec: libtool@2.4.6
+        prefix: /usr
+    diffutils:
+      buildable: false
+      version: [3.3]
+      externals:
+      - spec: diffutils@3.3
+        prefix: /usr
+    gmake:
+      buildable: false
+      version: [2.82, 4.2.1]
+      externals:
+      - spec: gmake@3.82
+        prefix: /usr
+      - spec: gmake@4.2.1
+        prefix: /usr/tcetmp
+    ncurses:
+      buildable: false
+      version: [5.9.20130511]
+      externals:
+      - spec: ncurses@5.9.20130511+termlib abi=5
+        prefix: /usr
+    xz:
+      buildable: false
+      version: [5.2.2]
+      externals:
+      - spec: xz@5.2.2
+        prefix: /usr
+  compilers:
+  - compiler:
+      spec: clang@13.0.1.default.gcc.8.3.1
+      paths:
+        cc: /usr/tce/packages/clang/clang-13.0.1-gcc-8.3.1/bin/clang
+        cxx: /usr/tce/packages/clang/clang-13.0.1-gcc-8.3.1/bin/clang++
+        fc: /usr/tce/packages/gcc/gcc-8.3.1/bin/gfortran
+        f77: /usr/tce/packages/gcc/gcc-8.3.1/bin/gfortran
+      operating_system: rhel7
+      target: ppc64le
+      modules: []
+      environment: {}
+      extra_rpaths: []
+  - compiler:
+      spec: clang@14.0.5.gcc.8.3.1
+      paths:
+        cc: /usr/tce/packages/clang/clang-14.0.5/bin/clang
+        cxx: /usr/tce/packages/clang/clang-14.0.5/bin/clang++
+        fc: /usr/tce/packages/xl/xl-2022.08.19/bin/xlf2003_r
+        f77: /usr/tce/packages/xl/xl-2022.08.19/bin/xlf_r
+      flags:
+        cflags: --gcc-toolchain=/usr/tce/packages/gcc/gcc-8.3.1
+        cxxflags: --gcc-toolchain=/usr/tce/packages/gcc/gcc-8.3.1
+        fflags: --gcc-toolchain=/usr/tce/packages/gcc/gcc-8.3.1
+      operating_system: rhel7
+      target: ppc64le
+      modules: []
+      environment: {}
+      extra_rpaths: []
+  - compiler:
+      spec: clang@15.0.6.gcc.8.3.1
+      paths:
+        cc: /usr/tce/packages/clang/clang-15.0.6/bin/clang
+        cxx: /usr/tce/packages/clang/clang-15.0.6/bin/clang++
+        fc: /usr/tce/packages/xl/xl-2023.03.13/bin/xlf2003_r
+        f77: /usr/tce/packages/xl/xl-2023.03.13/bin/xlf_r
+      flags:
+        cflags: --gcc-toolchain=/usr/tce/packages/gcc/gcc-8.3.1
+        cxxflags: --gcc-toolchain=/usr/tce/packages/gcc/gcc-8.3.1
+        fflags: --gcc-toolchain=/usr/tce/packages/gcc/gcc-8.3.1
+      operating_system: rhel7
+      target: ppc64le
+      modules: []
+      environment: {}
+      extra_rpaths: []
+  - compiler:
+      spec: gcc@8.3.1
+      paths:
+        cc: /usr/tce/packages/gcc/gcc-8.3.1/bin/gcc
+        cxx: /usr/tce/packages/gcc/gcc-8.3.1/bin/g++
+        f77: /usr/tce/packages/gcc/gcc-8.3.1/bin/gfortran
+        fc: /usr/tce/packages/gcc/gcc-8.3.1/bin/gfortran
+      flags: {}
+      operating_system: rhel7
+      target: ppc64le
+      modules: []
+      environment: {}
+      extra_rpaths: []
